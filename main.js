@@ -38,8 +38,19 @@ function calculaTempo(tempoObjetivo){
         return [0,0,0,0];
     }
 }
+
 function atualizaCronometro(){
-    for (let i=0; 1<contadores.lengh;i++){
-        document.getElementByld("dias"+i).text
+    for (let i=0; i<contadores.length;i++){
+        focument.getElementById("dias"+i).textContent = calculaTempo(tempos[i])[0];
+        focument.getElementById("horas"+i).textContent = calculaTempo(tempos[i])[1];
+        focument.getElementById("min"+i).textContent = calculaTempo(tempos[i])[2];
+        focument.getElementById("seg"+i).textContent = calculaTempo(tempos[i])[3];
     }
 }
+
+function comecaCronometro(){
+    atualizaCronometro();
+    setInterval(atualizaCronometro,1000);
+}
+
+comecaCronometro();
